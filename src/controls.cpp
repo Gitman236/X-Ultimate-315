@@ -54,8 +54,8 @@ void ChasisSpinVol(char side, float vol)// vol -12----0-----12
   }
   
 }
-/*
-void Piston(motor29 name,bool status)
+
+void PistonLegacy(motor29 name,bool status)
 {
   name.setVelocity(100,percent);
   if (status==1)
@@ -63,7 +63,7 @@ void Piston(motor29 name,bool status)
   if (status==0)
   {name.stop();}
 }
-*/
+
 void Piston(digital_out name,bool status)
 {
   if (status==1)
