@@ -28,7 +28,7 @@ digital_out Hang = digital_out(Brain.ThreeWirePort.C);
 digital_out Wing = digital_out(Brain.ThreeWirePort.F);
 controller Controller1 = controller(primary);
 motor Intake = motor(PORT1, ratio18_1, true);
-motor Puncher = motor(PORT9, ratio18_1, false);
+motor Catapult = motor(PORT9, ratio18_1, false);
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

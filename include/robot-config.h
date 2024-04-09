@@ -16,7 +16,7 @@ extern digital_out Wing;
 // extern motor29 WingR;
 extern controller Controller1;
 extern motor Intake;
-extern motor Puncher;
+extern motor Catapult;
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
