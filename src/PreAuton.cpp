@@ -20,8 +20,8 @@ void MotorInitialization()
   Catapult.setStopping(hold);//设置默认停止模式
   Catapult.setVelocity(100,percent);//设置默认速度30
 
-  Intake.setMaxTorque(60,percent);//设置扭矩
-  Intake.setStopping(brake);//设置默认停止模式brake
+  Intake.setMaxTorque(100,percent);//设置扭矩
+  Intake.setStopping(hold);//设置默认停止模式brake
   Intake.setVelocity(100,percent);//设置默认速度
 }
 

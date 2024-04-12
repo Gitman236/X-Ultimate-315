@@ -44,10 +44,10 @@ void Joystick()
 
   ///////////L1（L2）控制撞针运动////////////////
   if (Controller1.ButtonL1.pressing())
-  {    Puncher.spin(forward,12,volt);  }
+  {    Catapult.spin(forward,12,volt);  }
   else if (Controller1.ButtonL2.pressing())
-  {    Puncher.spin(reverse,7,volt);  }
-  else   {    Puncher.stop();  }
+  {    Catapult.spin(reverse,7,volt);  }
+  else   {    Catapult.stop();  }
 
   ////////////R1 R2 控制intake吸入吐出///////////
   if (Controller1.ButtonR1.pressing())

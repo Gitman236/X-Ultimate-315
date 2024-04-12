@@ -15,12 +15,12 @@ brain  Brain;
 //3. 端口
 //4. V5电机 齿轮比
 //5. 旋转运动方向（true/false） 
-motor LRF = motor(PORT15, ratio6_1, true);
-motor LRM = motor(PORT14, ratio6_1, false);
+motor LRF = motor(PORT15, ratio6_1, false);
+motor LRM = motor(PORT16, ratio6_1, true);
 motor LRB = motor(PORT12, ratio6_1, true);
-motor RRF = motor(PORT5, ratio6_1, true);
-motor RRM = motor(PORT4, ratio6_1, false);
-motor RRB = motor(PORT2, ratio6_1, true);
+motor RRF = motor(PORT5, ratio6_1, false);
+motor RRM = motor(PORT2, ratio6_1, true);
+motor RRB = motor(PORT10, ratio6_1, true);
 inertial Inertial = inertial(PORT16);
 // motor29 Hang = motor29(Brain.ThreeWirePort.C, false);
 digital_out Hang = digital_out(Brain.ThreeWirePort.C);

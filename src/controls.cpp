@@ -26,13 +26,13 @@ void ChasisSpinSpd(char side, int spd)//spd -100----0----100
 {
   if (side =='L')//LEFT
   {
-  LRF.spin(fwd, 0.12*spd, volt);
+  LRF.spin(reverse, 0.12*spd, volt);
   LRM.spin(fwd, 0.12*spd, volt);
   LRB.spin(fwd, 0.12*spd, volt);
   }
   if (side=='R')//RIGHT
   {
-  RRF.spin(fwd, 0.12*spd, volt);
+  RRF.spin(reverse, 0.12*spd, volt);
   RRM.spin(fwd, 0.12*spd, volt);
   RRB.spin(fwd, 0.12*spd, volt);
   }
@@ -42,13 +42,13 @@ void ChasisSpinVol(char side, float vol)// vol -12----0-----12
 {
   if (side == 'L')
   {
-  LRF.spin(fwd, vol, volt);
+  LRF.spin(reverse, vol, volt);
   LRM.spin(fwd, vol, volt);
   LRB.spin(fwd, vol, volt);
   }
   if (side== 'R')
   {
-  RRF.spin(fwd, vol, volt);
+  RRF.spin(reverse, vol, volt);
   RRM.spin(fwd, vol, volt);
   RRB.spin(fwd, vol, volt);
   }
