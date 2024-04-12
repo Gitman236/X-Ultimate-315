@@ -57,16 +57,20 @@ void Joystick()
 
 ////////////// X Y 控制Wing展开//////////////
   if (Controller1.ButtonX.pressing())
-  {    Piston(Wing,1);  } 
+  {    //Piston(Wing,1);  
+  } 
   // else if (Controller1.ButtonY.pressing())
   // {    Piston(Wing,0);  }
   else
-  {    Piston(Wing,0);  }
+  {    //Piston(Wing,0);  
+  }
 
 //////////////Up (B) 控制Hang展开//////////////
   if (Controller1.ButtonA.pressing())  //up to A gua
-  {    Piston(Hang,1);  } 
+  {    //Piston(Hang,1);  
+  } 
   else if (Controller1.ButtonB.pressing())
-  {    Piston(Hang,0);  }
+  {    //Piston(Hang,0);  
+  }
 }
 }

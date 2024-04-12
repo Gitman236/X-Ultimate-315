@@ -73,7 +73,7 @@ void auton4(){
 
 void SkillsAuton()
 {
-  
+  /*
   Run_gyro(390,80,0);
   wait(100,msec);
   Turn_Gyro(-106);
@@ -123,6 +123,6 @@ void SkillsAuton()
 
 
   
-    
+    */
 autodone=1;
 }
