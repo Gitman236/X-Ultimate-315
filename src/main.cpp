@@ -1,32 +1,16 @@
 /*----------------------------------------------------*/
-/*           12315A Bravo Bot Program                 */
-/*        Starting by qinyi at 10/10/2023             */
+/*       CPYZ 12315X Ultimate Bot Program             */
+/*          Start by qinyi at 31/03/2024              */
+/*             OVER UNDER FINAL CODE                  */
 /*----------------------------------------------------*/
-// ---- START VEXCODE CONFIGURED DEVICES ----
-// Robot Configuration:
-// [Name]               [Type]        [Port(s)]
-// LRF                  motor         1               
-// LRM                  motor         2               
-// LRB                  motor         4               
-// RRF                  motor         9               
-// RRM                  motor         19              
-// RRB                  motor         8               
-// Inertial             inertial      21              
-// Hang                 motor29       A               
-// WingL                motor29       B               
-// WingR                motor29       C               
-// Controller1          controller                    
-// Intake               motor         6               
-// Catapult             motor         20              
-// ---- END VEXCODE CONFIGURED DEVICES ----
 
 #include "vex.h"
 
-//11
+//1
 using namespace vex;
-using string = std::string;
+using string = std::string;//引入常用但是vex基本库不含有的string字符串类型
 
-competition Competition;
+competition Competition;//do not remove
 
 #include "PreAuton.h"
 #include "controls.h"
@@ -43,30 +27,32 @@ float Start =0;
 int Side =1;
 float turnspeed=1;
 
-// define your global instances of motors and other devices here
 
 
 void pre_auton(void) {
  
-  // vexcodeInit(); // Initializing Robot Configuration. DO NOT REMOVE!
+
   Controller1.Screen.clearScreen();
   MotorInitialization();
   // InertialInitialization();
-  // Selector();
+
   Joystick_Selector();
 }
 
 void autonomous(void) {
 
-  StartAuton();
+  StartAuton();//运行实际自动程序
+  Brain.Timer.clear();//重置大脑计时器，准备自动计时
   while(1){
     Brain.Screen.clearLine(1);
     Brain.Screen.setCursor(1,1);
-    Brain.Screen.print(Inertial.rotation(degrees));
+    Brain.Screen.print("Inertial degrees:  ");
+    Brain.Screen.print(Inertial.rotation(degrees));//用于时刻打印自动度数（调自动用，比赛前注释）
     if(autodone){
       Brain.Screen.clearLine(2);
       Brain.Screen.setCursor(2,3);
-      Brain.Screen.print(Brain.timer(sec));
+      Brain.Screen.print("Auto Time:  ");
+      Brain.Screen.print(Brain.timer(sec));//自动结束终止计时，最终时间定格（注意误差10msec）
       autodone = 0;
     }
     wait(10,msec);
@@ -78,7 +64,7 @@ void autonomous(void) {
 
 
 void usercontrol(void) {
-  Joystick();
+  Joystick();//手动控制函数，包括按键摇杆映射等
   // while (1) {
   //   wait(20, msec); 
                     
@@ -87,17 +73,17 @@ void usercontrol(void) {
 
 int main() {
   
-  Competition.autonomous(autonomous);
-  Competition.drivercontrol(usercontrol);
+  Competition.autonomous(autonomous);//场控回调，do not remove
+  Competition.drivercontrol(usercontrol);//场控回调，do not remove
 
   
-  pre_auton();
+  pre_auton();//自动前准备函数，包括各种初始化，以及自动选择器等 do not remove
 
   
-  while (true) 
-  {
+  // while (true) 
+  // {
     
 
-    wait(20, msec);
-  }
+  //   wait(20, msec);
+  // }
 }

@@ -21,7 +21,7 @@ void MotorInitialization()
   Catapult.setVelocity(100,percent);//设置默认速度30
 
   Intake.setMaxTorque(100,percent);//设置扭矩
-  Intake.setStopping(hold);//设置默认停止模式brake
+  Intake.setStopping(hold);//设置默认停止模式hold
   Intake.setVelocity(100,percent);//设置默认速度
 }
 
@@ -132,7 +132,7 @@ void Joystick_Selector()
   
   int i=0;
   string auton_list[]={"skills","1","2","3","4"};
-  int getArrayLength = sizeof(auton_list) / sizeof(string);
+  int getArrayLength = sizeof(auton_list) / sizeof(auton_list[0]);//5
   while (1)
   {
     
@@ -149,18 +149,30 @@ void Joystick_Selector()
         i += 1;
         RouteSet = i;
       }
+      wait(150,msec);
     }
     
-    // printf("自动选择：%s",auton_list[i]);
+
     Controller1.Screen.clearLine(1);
     Controller1.Screen.setCursor(1,2);
-    Controller1.Screen.print("自动选择：%s",auton_list[i].c_str());
+    // Controller1.Screen.print("自动选择：%s",auton_list[i].c_str());
+    Controller1.Screen.print("自动选择：");
+    Controller1.Screen.clearLine(2);
+    Controller1.Screen.setCursor(2,2);
+    Controller1.Screen.print(auton_list[i].c_str());
     // Controller1.Screen.print(i);
-    wait(150,msec);
+
     if (Controller1.ButtonDown.pressing())
     {
-    InertialInitialization();     
+    InertialInitialization();
+    wait(500,msec);
+    Controller1.Screen.clearLine(1);
+    Controller1.Screen.setCursor(1,2);
+    // Controller1.Screen.print("自动选择：%s",auton_list[i].c_str());
+    Controller1.Screen.print("自动选择：已选定，初始化完成");     
     break;}
+    
+    wait(150,msec);
     
 }
 // auton2(); 

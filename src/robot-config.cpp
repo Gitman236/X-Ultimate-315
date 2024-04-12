@@ -21,14 +21,20 @@ motor LRB = motor(PORT12, ratio6_1, true);
 motor RRF = motor(PORT5, ratio6_1, false);
 motor RRM = motor(PORT2, ratio6_1, true);
 motor RRB = motor(PORT10, ratio6_1, true);
+
 inertial Inertial = inertial(PORT16);
-// motor29 Hang = motor29(Brain.ThreeWirePort.C, false);
-digital_out Hang = digital_out(Brain.ThreeWirePort.C);
-// motor29 Wing = motor29(Brain.ThreeWirePort.F, false);
-digital_out Wing = digital_out(Brain.ThreeWirePort.F);
+
+// digital_out Hang = digital_out(Brain.ThreeWirePort.C);
+// digital_out Wing = digital_out(Brain.ThreeWirePort.F);
+
 controller Controller1 = controller(primary);
 motor Intake = motor(PORT1, ratio18_1, true);
 motor Catapult = motor(PORT9, ratio18_1, false);
+
+limit PuncherSensor = limit(Brain.ThreeWirePort.A);
+limit ClimbPosSensor = limit(Brain.ThreeWirePort.B);
+digital_out Wing_Hang = digital_out(Brain.ThreeWirePort.C);
+digital_out PTO_Lock = digital_out(Brain.ThreeWirePort.D);
 
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.

@@ -3,7 +3,7 @@
 using namespace vex;
 using string = std::string;
 
-void ChasisStop(brakeType brakeTypee)
+void ChasisStop(brakeType brakeTypee)//底盘停止运动（带指定停止类型）
 {
   LRF.stop(brakeTypee);
   LRM.stop(brakeTypee);
@@ -12,17 +12,17 @@ void ChasisStop(brakeType brakeTypee)
   RRM.stop(brakeTypee);
   RRB.stop(brakeTypee);
 }
-void ChasisStopSlow()
+void ChasisStopSlow()//底盘停止运动（带指定停止类型）
 {
-  LRF.stop(coast);
+  LRF.stop(brake);
   LRM.stop(coast);
   LRB.stop(brake);
-  RRF.stop(coast);
+  RRF.stop(brake);
   RRM.stop(coast);
   RRB.stop(brake);
 }
 
-void ChasisSpinSpd(char side, int spd)//spd -100----0----100
+void ChasisSpinSpd(char side, int spd)//spd -100----0----100 底盘运动
 {
   if (side =='L')//LEFT
   {
@@ -38,7 +38,7 @@ void ChasisSpinSpd(char side, int spd)//spd -100----0----100
   }
   
 }
-void ChasisSpinVol(char side, float vol)// vol -12----0-----12
+void ChasisSpinVol(char side, float vol)// vol -12----0-----12 底盘运动（用voltage模式控制可以达到最大速度并跳过内置pid，此处两个函数都最终使用voltage实现）
 {
   if (side == 'L')
   {
@@ -55,7 +55,7 @@ void ChasisSpinVol(char side, float vol)// vol -12----0-----12
   
 }
 
-void PistonLegacy(motor29 name,bool status)
+void PistonLegacy(motor29 name,bool status)//former cable气缸运动 弃用
 {
   name.setVelocity(100,percent);
   if (status==1)
@@ -64,7 +64,7 @@ void PistonLegacy(motor29 name,bool status)
   {name.stop();}
 }
 
-void Piston(digital_out name,bool status)
+void Piston(digital_out name,bool status)//new cable 气缸控制
 {
   if (status==1)
   {name.set(1);}
@@ -74,21 +74,24 @@ void Piston(digital_out name,bool status)
 
 
 
-void intake_spin(int dir){
-  if (dir == 1){Intake.spin(fwd,12,volt);}
-  if (dir == 0){Intake.spin(reverse,12,volt);} 
+// void intake_spin(int dir){
+//   if (dir == 1){Intake.spin(fwd,12,volt);}
+//   if (dir == 0){Intake.spin(reverse,12,volt);} 
   
 
-}
+// }
 
-void RunIntake(bool dir,int time, int speed )
+void intake(int speed,std::string dir)//吸球(可与run_gyro 同时运行) 速度0-100；【i】吸入in/【o】吐出out/【s】停止stop
 {
-Intake.spin(fwd,12,volt);
-wait(time,msec);
-Intake.stop();
-ChasisStopSlow();
-
-
+  
+  if (dir == "in")
+  {Intake.spin(forward,12*speed/100,volt);}
+  else if (dir == "out")
+  {Intake.spin(reverse,12*speed/100,volt);}
+  else if (dir == "stop")
+  Intake.stop(hold);
+  
+  
 
 }
 // void wing(bool status)

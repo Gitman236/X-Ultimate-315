@@ -10,8 +10,8 @@ void ChasisSpinVol(char side, float vol);//1 for left side,0 for right side. vol
 void ChasisStopSlow();
 
 void ChasisStop(brakeType brakeTypee);
-void intake_spin(int time);
-void RunIntake(bool dir,int time, int speed );
+void intake(int speed,std::string dir);
+
 // void wing(bool status);
 // void hang(bool status);
 
