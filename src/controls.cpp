@@ -14,10 +14,10 @@ void ChasisStop(brakeType brakeTypee)//底盘停止运动（带指定停止类�
 }
 void ChasisStopSlow()//底盘停止运动（带指定停止类型）
 {
-  LRF.stop(brake);
+  LRF.stop(coast);
   LRM.stop(coast);
   LRB.stop(brake);
-  RRF.stop(brake);
+  RRF.stop(coast);
   RRM.stop(coast);
   RRB.stop(brake);
 }
@@ -26,15 +26,15 @@ void ChasisSpinSpd(char side, int spd)//spd -100----0----100 底盘运动
 {
   if (side =='L')//LEFT
   {
-  LRF.spin(reverse, 0.12*spd, volt);
-  LRM.spin(fwd, 0.12*spd, volt);
-  LRB.spin(fwd, 0.12*spd, volt);
+  LRF.spin(fwd, 0.12*spd, volt);
+  LRM.spin(reverse, 0.12*spd, volt);
+  LRB.spin(reverse, 0.12*spd, volt);
   }
   if (side=='R')//RIGHT
   {
-  RRF.spin(reverse, 0.12*spd, volt);
-  RRM.spin(fwd, 0.12*spd, volt);
-  RRB.spin(fwd, 0.12*spd, volt);
+  RRF.spin(fwd, 0.12*spd, volt);
+  RRM.spin(reverse, 0.12*spd, volt);
+  RRB.spin(reverse, 0.12*spd, volt);
   }
   
 }
@@ -42,15 +42,15 @@ void ChasisSpinVol(char side, float vol)// vol -12----0-----12 底盘运动（�
 {
   if (side == 'L')
   {
-  LRF.spin(reverse, vol, volt);
-  LRM.spin(fwd, vol, volt);
-  LRB.spin(fwd, vol, volt);
+  LRF.spin(fwd, vol, volt);
+  LRM.spin(reverse, vol, volt);
+  LRB.spin(reverse, vol, volt);
   }
   if (side== 'R')
   {
-  RRF.spin(reverse, vol, volt);
-  RRM.spin(fwd, vol, volt);
-  RRB.spin(fwd, vol, volt);
+  RRF.spin(fwd, vol, volt);
+  RRM.spin(reverse, vol, volt);
+  RRB.spin(reverse, vol, volt);
   }
   
 }
@@ -94,6 +94,40 @@ void intake(int speed,std::string dir)//吸球(可与run_gyro 同时运行) 速�
   
 
 }
+  
+void catamove(std::string spinmode)
+{
+  if (spinmode =="shoot")
+  {
+   CataUp =1;
+   Catapult.spin(forward,9,volt); 
+  }
+  else if (spinmode =="down")
+  {
+    while (CataUp)
+    {
+      Catapult.setVelocity(20,rpm);
+      Catapult.spinFor(1,degrees);
+      if (PuncherSensor.pressing())
+      {
+        CataUp = 0;
+        Catapult.spinFor(0.5,degrees);
+      }
+      wait(50,msec);
+    }
+    
+  }
+  else if (spinmode =="stop&down")
+  {
+    Catapult.stop();
+  }
+
+
+  
+
+
+}
+
 // void wing(bool status)
 // {
 //   if (status == 1)//wing open

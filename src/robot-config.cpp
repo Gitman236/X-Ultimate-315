@@ -15,23 +15,23 @@ brain  Brain;
 //3. 端口
 //4. V5电机 齿轮比
 //5. 旋转运动方向（true/false） 
-motor LRF = motor(PORT15, ratio6_1, false);
-motor LRM = motor(PORT16, ratio6_1, true);
-motor LRB = motor(PORT12, ratio6_1, true);
-motor RRF = motor(PORT5, ratio6_1, false);
-motor RRM = motor(PORT2, ratio6_1, true);
-motor RRB = motor(PORT10, ratio6_1, true);
+motor LRF = motor(PORT16, ratio6_1, true);//16
+motor LRM = motor(PORT17, ratio6_1, false);//17
+motor LRB = motor(PORT18, ratio6_1, false);//18
+motor RRF = motor(PORT6, ratio6_1, false);//6
+motor RRM = motor(PORT8, ratio6_1, true);//8
+motor RRB = motor(PORT9, ratio6_1, true);//9
 
-inertial Inertial = inertial(PORT16);
+inertial Inertial = inertial(PORT21);
 
 // digital_out Hang = digital_out(Brain.ThreeWirePort.C);
 // digital_out Wing = digital_out(Brain.ThreeWirePort.F);
 
 controller Controller1 = controller(primary);
-motor Intake = motor(PORT1, ratio18_1, true);
-motor Catapult = motor(PORT9, ratio18_1, false);
+motor Intake = motor(PORT5, ratio18_1, false);
+motor Catapult = motor(PORT14, ratio18_1, false);
 
-limit PuncherSensor = limit(Brain.ThreeWirePort.A);
+limit PuncherSensor = limit(Brain.ThreeWirePort.H);
 limit ClimbPosSensor = limit(Brain.ThreeWirePort.B);
 digital_out Wing_Hang = digital_out(Brain.ThreeWirePort.C);
 digital_out PTO_Lock = digital_out(Brain.ThreeWirePort.D);

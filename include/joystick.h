@@ -3,6 +3,7 @@
 
 #include "vex.h"
 
+extern bool pto;
 
 
 void Joystick();

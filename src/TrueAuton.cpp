@@ -45,6 +45,8 @@ void StartAuton()
 
 //线路一：
 void auton1(){
+  // Run_gyro(900,60,30);
+  Turn_Gyro(90);
 
   autodone=1;
 

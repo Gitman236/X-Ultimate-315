@@ -27,6 +27,8 @@ float Start =0;
 int Side =1;
 float turnspeed=1;
 
+bool pto=0;
+bool CataUp=1;
 
 
 void pre_auton(void) {

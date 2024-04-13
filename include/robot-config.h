@@ -18,6 +18,7 @@ extern controller Controller1;
 extern motor Intake;
 extern motor Catapult;
 
+extern limit PuncherSensor;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

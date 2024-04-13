@@ -62,7 +62,7 @@ void Run_gyro(double enc , double power, float g)//距离 功率，方向
     else
     {
     ChasisSpinSpd('L',(sgn(enc)*power) + turnpower);
-    ChasisSpinSpd('R',(-sgn(enc)*power) + turnpower);
+    ChasisSpinSpd('R',(sgn(enc)*power) - turnpower);
     wait(10,msec);
     }/* 
     
@@ -84,8 +84,8 @@ void Run_gyro(double enc , double power, float g)//距离 功率，方向
       
     
   }
-  // ChasisStop(brake);  改!!!
-  ChasisStopSlow();
+  ChasisStop(hold);
+  // ChasisStopSlow();
 }
 
 void Turn_Gyro(float target)
@@ -129,13 +129,13 @@ void Turn_Gyro(float target)
     pow1=turnspeed*pow;
 
     ChasisSpinSpd('L',pow1);
-    ChasisSpinSpd('R',pow1);
+    ChasisSpinSpd('R',-pow1);
 
 
     lasterror = error;
     wait(10,msec);
 
   }
-   ChasisStop(brake);
+   ChasisStop(hold);
 
 }
