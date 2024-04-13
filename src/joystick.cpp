@@ -50,16 +50,16 @@ void Joystick()
   ///////////R1（R2）控制撞针运动////////////////
   if (Controller1.ButtonR1.pressing())
   {    
-    catamove("shoot");
+    CataStatus = "shoot";
   }
   else if (Controller1.ButtonR2.pressing())
   {
-    catamove("stop&down");
+    // CataMove("stop&down");
   }
     
 
   // else   {    Catapult.stop();  }
-  }
+  
 
   ////////////L1 L2 控制intake吸入吐出///////////
   if (Controller1.ButtonL1.pressing())//in
@@ -84,5 +84,6 @@ void Joystick()
   } 
   else if (Controller1.ButtonB.pressing())
   {    //Piston(Hang,0);  
+  }
   }
 }

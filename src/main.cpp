@@ -29,6 +29,7 @@ float turnspeed=1;
 
 bool pto=0;
 bool CataUp=1;
+string CataStatus="stop";
 
 
 void pre_auton(void) {
@@ -66,7 +67,8 @@ void autonomous(void) {
 
 
 void usercontrol(void) {
-  Joystick();//手动控制函数，包括按键摇杆映射等
+  Joystick();//手动控函数，包括按键摇杆映射等
+  CataMove();//弹射机构控制函数
   // while (1) {
   //   wait(20, msec); 
                     

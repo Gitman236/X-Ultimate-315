@@ -95,37 +95,61 @@ void intake(int speed,std::string dir)//吸球(可与run_gyro 同时运行) 速�
 
 }
   
-void catamove(std::string spinmode)
+void CataMove()
 {
-  if (spinmode =="shoot")
+  while(1)
   {
-   CataUp =1;
-   Catapult.spin(forward,9,volt); 
-  }
-  else if (spinmode =="down")
-  {
-    while (CataUp)
-    {
-      Catapult.setVelocity(20,rpm);
-      Catapult.spinFor(1,degrees);
-      if (PuncherSensor.pressing())
-      {
-        CataUp = 0;
-        Catapult.spinFor(0.5,degrees);
-      }
-      wait(50,msec);
-    }
+  //   if (Controller1.ButtonR1.pressing())
+  //   {    
+  //     CataUp =1;
+  //     Catapult.spin(forward,9,volt); 
+  //   }
+  //   else if (Controller1.ButtonR2.pressing())
+  //   {
+  //     while (CataUp)
+  //     {
+  //       Catapult.setVelocity(20,rpm);
+  //       Catapult.spinFor(1,degrees);
+  //       if (PuncherSensor.pressing())
+  //       {
+  //         CataUp = 0;
+  //         Catapult.spinFor(0.5,degrees);
+  //       }
+  //       wait(50,msec);
+  //     }
+      
+  //   }
+  //   else if (Controller1.ButtonR2.pressing())
+  //   {
+  //     Catapult.stop();
+  //   }
+  //   wait(20,msec);
+  // }
+  // if (spinmode =="shoot")
+  // {
+  //  CataUp =1;
+  //  Catapult.spin(forward,9,volt); 
+  // }
+  // else if (spinmode =="down")
+  // {
+  //   while (CataUp)
+  //   {
+  //     Catapult.setVelocity(20,rpm);
+  //     Catapult.spinFor(1,degrees);
+  //     if (PuncherSensor.pressing())
+  //     {
+  //       CataUp = 0;
+  //       Catapult.spinFor(0.5,degrees);
+  //     }
+  //     wait(50,msec);
+  //   }
     
+
+  // else if (spinmode =="stop&down")
+  // {
+  //   Catapult.stop();
+  // }
   }
-  else if (spinmode =="stop&down")
-  {
-    Catapult.stop();
-  }
-
-
-  
-
-
 }
 
 // void wing(bool status)

@@ -3,6 +3,7 @@
 
 #include "vex.h"
 extern bool CataUp;
+extern string CataStatus;
 
 void PistonLegacy(motor29 name,bool status);
 void Piston(digital_out name,bool status);
@@ -12,7 +13,7 @@ void ChasisStopSlow();
 
 void ChasisStop(brakeType brakeTypee);
 void intake(int speed,std::string dir);
-void catamove(std::string spinmode);
+void CataMove();
 
 // void wing(bool status);
 // void hang(bool status);
