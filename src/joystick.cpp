@@ -54,11 +54,22 @@ void Joystick()
   }
   else if (Controller1.ButtonR2.pressing())
   {
-    // CataMove("stop&down");
+    CataStatus = "stop";
+    wait(350,msec);
+    CataStatus = "down";
   }
-    
 
+/////AB键 以下测试 和上边互斥
+  // if (Controller1.ButtonA.pressing())
+  // {    
+  //   Catapult.spin(forward,9,volt);
+  // }
+  // else if (Controller1.ButtonB.pressing())
+  // {
+  //   Catapult.spin(reverse,5,volt);
+  // }
   // else   {    Catapult.stop();  }
+// //////end
   
 
   ////////////L1 L2 控制intake吸入吐出///////////
