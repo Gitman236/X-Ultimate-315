@@ -10,7 +10,7 @@ void Joystick()
   double leftvol;
   double rightvol;
   long int axis3;
-  float axis4;
+  float axis1;
   // long int axis2;
   float turn_slow_index =0.95;
   float input_to_voltage_index=0.095;///0.097 by YUE
@@ -21,15 +21,15 @@ void Joystick()
   while (1)
   {
   ///////////////////左摇杆控制底盘运动//////////////////
-  axis4 = turn_slow_index * Controller1.Axis4.value();
+  axis1 = turn_slow_index * Controller1.Axis1.value();
   // if (Controller1.Axis3.value() > int(128) )
   // {    axis3 = Controller1.Axis3.value() - 4294967296;   }
   // else
   // {
   axis3 = Controller1.Axis3.value();
   // }
-  leftvol = input_to_voltage_index*(axis3 + axis4);//3-4 
-  rightvol = input_to_voltage_index*(-axis3 + axis4);//3+4
+  leftvol = input_to_voltage_index*(axis3 + axis1);//3-4 
+  rightvol = input_to_voltage_index*(-axis3 + axis1);//3+4
   
   ChasisSpinVol('L',leftvol);
   ChasisSpinVol('R',rightvol);
