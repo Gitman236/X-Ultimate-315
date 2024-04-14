@@ -36,10 +36,3 @@ limit ClimbPosSensor = limit(Brain.ThreeWirePort.B);
 digital_out Wing_Hang = digital_out(Brain.ThreeWirePort.C);
 digital_out PTO_Lock = digital_out(Brain.ThreeWirePort.D);
 
-/**
- * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
- * 
- * This should be called at the start of your int main function.
- */
-// void vexcodeInit( void ) {
-// }

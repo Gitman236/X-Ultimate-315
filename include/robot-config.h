@@ -10,15 +10,14 @@ extern motor RRF;
 extern motor RRM;
 extern motor RRB;
 extern inertial Inertial;
-extern digital_out Hang;
-// extern motor29 HangR;
-extern digital_out Wing;
-// extern motor29 WingR;
 extern controller Controller1;
 extern motor Intake;
 extern motor Catapult;
 
 extern limit PuncherSensor;
+extern limit PuncherSensor;
+extern digital_out Wing_Hang;
+extern digital_out PTO_Lock;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

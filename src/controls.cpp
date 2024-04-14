@@ -111,61 +111,20 @@ void CataMove()
       Catapult.setPosition(0,degrees);
       while(!(PuncherSensor.pressing()) && !(CataStatus == "shoot") )//仅当限位开关未被按下且没有手动按下发射的情况下撞针才能下落
       {
-        Catapult.setVelocity(30,rpm);
+        Catapult.setVelocity(100,rpm);
         Catapult.spinFor(2,degrees,true);
-      }
+      }      
+    }
+    else if (CataStatus == "pto_ing")
+    {
+      Catapult.setVelocity(50,rpm);
+      Catapult.spinFor(100,degrees,true);
       
     }
-  //   if (Controller1.ButtonR1.pressing())
-  //   {    
-  //     CataUp =1;
-  //     Catapult.spin(forward,9,volt); 
-  //   }
-  //   else if (Controller1.ButtonR2.pressing())
-  //   {
-  //     while (CataUp)
-  //     {
-  //       Catapult.setVelocity(20,rpm);
-  //       Catapult.spinFor(1,degrees);
-  //       if (PuncherSensor.pressing())
-  //       {
-  //         CataUp = 0;
-  //         Catapult.spinFor(0.5,degrees);
-  //       }
-  //       wait(50,msec);
-  //     }
-      
-  //   }
-  //   else if (Controller1.ButtonR2.pressing())
-  //   {
-  //     Catapult.stop();
-  //   }
-  //   wait(20,msec);
-  // }
-  // if (spinmode =="shoot")
-  // {
-  //  CataUp =1;
-  //  Catapult.spin(forward,9,volt); 
-  // }
-  // else if (spinmode =="down")
-  // {
-  //   while (CataUp)
-  //   {
-  //     Catapult.setVelocity(20,rpm);
-  //     Catapult.spinFor(1,degrees);
-  //     if (PuncherSensor.pressing())
-  //     {
-  //       CataUp = 0;
-  //       Catapult.spinFor(0.5,degrees);
-  //     }
-  //     wait(50,msec);
-  //   }
-    
-
-  // else if (spinmode =="stop&down")
-  // {
-  //   Catapult.stop();
-  // }
+    if (ptoToClimb==1)
+    {
+      break;
+    }
   }
 }
 

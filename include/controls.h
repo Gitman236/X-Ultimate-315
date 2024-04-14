@@ -3,7 +3,8 @@
 
 #include "vex.h"
 extern bool CataUp;
-extern string CataStatus;
+extern bool ptoToClimb;
+extern std::string CataStatus;
 
 void PistonLegacy(motor29 name,bool status);
 void Piston(digital_out name,bool status);

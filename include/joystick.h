@@ -3,7 +3,7 @@
 
 #include "vex.h"
 
-extern bool pto;
+extern bool ptoToClimb;
 
 
 void Joystick();

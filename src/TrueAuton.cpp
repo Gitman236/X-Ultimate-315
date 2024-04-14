@@ -43,7 +43,7 @@ void StartAuton()
 
 
 
-//线路一：远场
+//线路一：远场 6 goal rush
 void auton1(){
   // Run_gyro(900,60,30);
   Turn_Gyro(90);
