@@ -27,10 +27,6 @@ float Start =0;
 int Side =1;
 float turnspeed=1;
 
-bool ptoToClimb=0;
-bool CataUp=1;
-string CataStatus="stop";
-
 
 void pre_auton(void) {
  
@@ -68,26 +64,14 @@ void autonomous(void) {
 
 void usercontrol(void) {
   Joystick();//手动控函数，包括按键摇杆映射等
-  CataMove();//弹射机构控制函数
-  // while (1) {
-  //   wait(20, msec); 
-                    
-  // }
+
 }
 
 int main() {
   
   Competition.autonomous(autonomous);//场控回调，do not remove
   Competition.drivercontrol(usercontrol);//场控回调，do not remove
-
   
   pre_auton();//自动前准备函数，包括各种初始化，以及自动选择器等 do not remove
 
-  
-  // while (true) 
-  // {
-    
-
-  //   wait(20, msec);
-  // }
 }

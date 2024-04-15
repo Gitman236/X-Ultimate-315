@@ -2,9 +2,7 @@
 #define CONTROLS_H
 
 #include "vex.h"
-extern bool CataUp;
-extern bool ptoToClimb;
-extern std::string CataStatus;
+
 
 void PistonLegacy(motor29 name,bool status);
 void Piston(digital_out name,bool status);
@@ -14,7 +12,6 @@ void ChasisStopSlow();
 
 void ChasisStop(brakeType brakeTypee);
 void intake(int speed,std::string dir);
-void CataMove();
 
 // void wing(bool status);
 // void hang(bool status);

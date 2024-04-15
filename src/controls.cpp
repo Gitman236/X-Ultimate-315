@@ -81,7 +81,7 @@ void Piston(digital_out name,bool status)//new cable 气缸控制
 
 // }
 
-void intake(int speed,std::string dir)//吸球(可与run_gyro 同时运行) 速度0-100；【i】吸入in/【o】吐出out/【s】停止stop
+void intake(int speed,std::string dir)//auton吸球(可与run_gyro 同时运行) 速度0-100；【i】吸入in/【o】吐出out/【s】停止stop
 {
   
   if (dir == "in")
@@ -95,38 +95,7 @@ void intake(int speed,std::string dir)//吸球(可与run_gyro 同时运行) 速�
 
 }
   
-void CataMove()
-{
-  while(1)  {
-    if (CataStatus == "stop")
-    {
-      Catapult.stop();
-    }
-    else if (CataStatus == "shoot")
-    {
-      Catapult.spin(forward,9,volt); 
-    }
-    else if (CataStatus == "down")
-    {
-      Catapult.setPosition(0,degrees);
-      while(!(PuncherSensor.pressing()) && !(CataStatus == "shoot") )//仅当限位开关未被按下且没有手动按下发射的情况下撞针才能下落
-      {
-        Catapult.setVelocity(100,rpm);
-        Catapult.spinFor(2,degrees,true);
-      }      
-    }
-    else if (CataStatus == "pto_ing")
-    {
-      Catapult.setVelocity(50,rpm);
-      Catapult.spinFor(100,degrees,true);
-      
-    }
-    if (ptoToClimb==1)
-    {
-      break;
-    }
-  }
-}
+
 
 // void wing(bool status)
 // {
