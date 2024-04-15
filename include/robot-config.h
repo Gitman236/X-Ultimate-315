@@ -15,7 +15,7 @@ extern motor Intake;
 extern motor Catapult;
 
 extern limit PuncherSensor;
-extern limit PuncherSensor;
+
 extern digital_out Wing_Hang;
 extern digital_out PTO_Lock;
 /**

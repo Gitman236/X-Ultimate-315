@@ -47,7 +47,7 @@ void Joystick_Selector()
   // printf("%s","hello");
   
   int i=0;
-  string auton_list[]={"自动技能","远场","2","3","4"};
+  string auton_list[]={"自动技能","远场冲","远场保","近场","4"};
   int getArrayLength = sizeof(auton_list) / sizeof(auton_list[0]);//5
   while (1)
   {

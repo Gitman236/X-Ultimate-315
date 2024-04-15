@@ -43,7 +43,7 @@ void StartAuton()
 
 
 
-//线路一：远场 6 goal rush
+//线路一：远场冲 6 goal rush
 void auton1(){
   // Run_gyro(900,60,30);
   Turn_Gyro(90);
@@ -52,13 +52,13 @@ void auton1(){
 
 
 }
-//线路二
+//线路二：远场保
 void auton2(){
  
   autodone=1;
 
 }
-//线路三
+//线路三：近场
 void auton3(){
 
 

@@ -29,7 +29,6 @@ motor Intake = motor(PORT5, ratio18_1, false);
 motor Catapult = motor(PORT14, ratio18_1, false);
 
 limit PuncherSensor = limit(Brain.ThreeWirePort.H);
-limit ClimbPosSensor = limit(Brain.ThreeWirePort.B);
 
 digital_out Wing_Hang = digital_out(Brain.ThreeWirePort.C);
 digital_out PTO_Lock = digital_out(Brain.ThreeWirePort.D);

@@ -91,10 +91,10 @@ void Joystick() {
             Catapult.setMaxTorque(100, pct);
             if (Controller1.ButtonL1.pressing()) {
                 Catapult.spin(forward, 100, rpm); // 正转
-                Intake.spin(reverse, 8, volt); // 吐
+                Intake.spin(reverse, 7, volt); // 吐
             } else if (Controller1.ButtonL2.pressing()) {
                 Catapult.spin(reverse, 100, rpm); // 反转
-                Intake.spin(forward, 5, volt); // 吸
+                Intake.spin(forward, 4, volt); // 吸
             } else {
                 Catapult.stop(); // 停止
                 Intake.stop(); // 停止
