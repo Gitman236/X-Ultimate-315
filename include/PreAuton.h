@@ -10,6 +10,7 @@ extern float Start ;
 extern color AllianceSet;
 extern bool SkillsSet;
 extern int RouteSet;
+extern bool AutonSelected;
 
 
 

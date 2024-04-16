@@ -17,7 +17,7 @@ void MotorInitialization()
   }
  
   Catapult.setMaxTorque(100,percent);//设置扭矩
-  Catapult.setStopping(hold);//设置默认停止模式
+  Catapult.setStopping(brake);//设置默认停止模式
   Catapult.setVelocity(100,percent);//设置默认速度30
 
   Intake.setMaxTorque(100,percent);//设置扭矩
@@ -49,7 +49,7 @@ void Joystick_Selector()
   int i=0;
   string auton_list[]={"自动技能","远场冲","远场保","近场","4"};
   int getArrayLength = sizeof(auton_list) / sizeof(auton_list[0]);//5
-  while (1)
+  while (!AutonSelected)
   {
     
     if (Controller1.ButtonRight.pressing())
@@ -96,7 +96,7 @@ void Joystick_Selector()
     Controller1.Screen.setCursor(1,2);
     // Controller1.Screen.print("自动选择：%s",auton_list[i].c_str());
     Controller1.Screen.print("Init&OK");     
-    break;
+    AutonSelected =1;
     }
     
     wait(150,msec);

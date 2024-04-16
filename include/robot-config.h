@@ -17,7 +17,8 @@ extern motor Catapult;
 extern limit PuncherSensor;
 
 extern digital_out Wing_Hang;
-extern digital_out PTO_Lock;
+extern digital_out PTO;
+extern digital_out Lock;
 /**
  * Used to initialize code/tasks/devices added using tools in VEXcode Pro.
  * 

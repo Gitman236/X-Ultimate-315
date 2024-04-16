@@ -26,10 +26,11 @@ inertial Inertial = inertial(PORT21);
 
 controller Controller1 = controller(primary);
 motor Intake = motor(PORT5, ratio18_1, false);
-motor Catapult = motor(PORT14, ratio18_1, false);
+motor Catapult = motor(PORT4, ratio36_1, false);
 
 limit PuncherSensor = limit(Brain.ThreeWirePort.H);
 
 digital_out Wing_Hang = digital_out(Brain.ThreeWirePort.C);
-digital_out PTO_Lock = digital_out(Brain.ThreeWirePort.D);
+digital_out PTO = digital_out(Brain.ThreeWirePort.D);
+digital_out Lock = digital_out(Brain.ThreeWirePort.E);
 
