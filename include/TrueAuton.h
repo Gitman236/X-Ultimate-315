@@ -8,6 +8,7 @@
 extern bool SkillsSet;
 extern int RouteSet;
 extern bool autodone;
+extern float turnspeed;
 void StartAuton();
 void SkillsAuton();
 

@@ -45,8 +45,25 @@ void StartAuton()
 
 //线路一：远场冲 6 goal rush
 void auton1(){
-  // Run_gyro(900,60,30);
-  Turn_Gyro(90);
+  intake(100,"in");
+  wait(250,msec);
+  Run_gyro(210,19,0);
+  wait(500,msec);
+  intake(100,"stop");
+  wait(100,msec);
+  Run_gyro(1350,-50,0);
+  Run_gyro(595,-15,-47);
+  Piston(Wing_Hang,1);
+  wait(100,msec);
+  Run_gyro(320,-85,-52);
+  Piston(Wing_Hang,0);
+  Run_gyro(210,-85,-85);
+  // turnspeed=0.45;
+  // Turn_Gyro(-85);
+
+  // wait(150,msec);
+  // Run_gyro(480,-85,-91);
+
 
   autodone=1;
 
@@ -54,6 +71,14 @@ void auton1(){
 }
 //线路二：远场保
 void auton2(){
+  Run_gyro(1590,85,3);
+  wait(200,msec);
+  Turn_Gyro(89);
+  wait(100,msec);
+  intake(100,"out");
+  Run_gyro(300,80,87);
+
+
  
   autodone=1;
 

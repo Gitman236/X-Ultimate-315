@@ -52,7 +52,7 @@ void Joystick() {
 
         // 检测并执行其他操作（例如气缸控制）
         // 按下 R2 键伸出名为 Wing_Hang 的气缸，再按一下收回
-        if (Controller1.ButtonR2.pressing()) 
+        if (Controller1.ButtonL2.pressing()) 
         {
           Piston(Wing_Hang, 1);
         }
@@ -74,17 +74,17 @@ void Joystick() {
         // 未进行 PTO 时，按下 L1 键时 intake 吸入，按下 L2 键时 intake 吐出,按下 R1 键 Catapult 转，松手停止
         if (!PTO_Engaged) {
             
-            if (Controller1.ButtonL1.pressing()) {
+            if (Controller1.ButtonR1.pressing()) {
                 Intake.spin(forward, 12, volt); // 吸入
-            } else if (Controller1.ButtonL2.pressing()) {
+            } else if (Controller1.ButtonR2.pressing()) {
                 Intake.spin(reverse, 12, volt); // 吐出
             } else {
                 Intake.stop(); // 停止
             }
 
-            if (Controller1.ButtonR1.pressing() ) 
+            if (Controller1.ButtonL1.pressing() ) 
             {
-                Catapult.spin(forward, 100, pct); // 启动
+                Catapult.spin(forward, 90, pct); // 启动
             } 
             else{
                 Catapult.stop(); // 停止
@@ -95,10 +95,10 @@ void Joystick() {
         // 按下 L2 键驱动 Catapult 电机反转，同时 intake 吐
         if (PTO_Engaged) {
             Catapult.setStopping(hold);//设置默认停止模式
-            if (Controller1.ButtonL1.pressing()) {
+            if (Controller1.ButtonR1.pressing()) {
                 Catapult.spin(forward, 12, volt); // 正转
                 Intake.spin(reverse, 3, volt); // 吐
-            } else if (Controller1.ButtonL2.pressing()) {
+            } else if (Controller1.ButtonR2.pressing()) {
                 Catapult.spin(reverse, 12, volt); // 反转
                 Intake.spin(reverse, 3, volt); // 吐
             } else {

@@ -31,6 +31,6 @@ motor Catapult = motor(PORT4, ratio36_1, false);
 limit PuncherSensor = limit(Brain.ThreeWirePort.H);
 
 digital_out Wing_Hang = digital_out(Brain.ThreeWirePort.C);
-digital_out PTO = digital_out(Brain.ThreeWirePort.D);
+digital_out PTO = digital_out(Brain.ThreeWirePort.A);
 digital_out Lock = digital_out(Brain.ThreeWirePort.E);
 

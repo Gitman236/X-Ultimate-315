@@ -14,10 +14,10 @@ void ChasisStop(brakeType brakeTypee)//底盘停止运动（带指定停止类�
 }
 void ChasisStopSlow()//底盘停止运动（带指定停止类型）
 {
-  LRF.stop(coast);
+  LRF.stop(brake);
   LRM.stop(coast);
   LRB.stop(brake);
-  RRF.stop(coast);
+  RRF.stop(brake);
   RRM.stop(coast);
   RRB.stop(brake);
 }

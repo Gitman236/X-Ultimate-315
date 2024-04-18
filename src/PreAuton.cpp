@@ -85,13 +85,13 @@ void Joystick_Selector()
     Controller1.Screen.setCursor(1,2);
     Controller1.Screen.print("Initializing");  
     
-    wait(1,sec);
+    wait(700,msec);
     Controller1.Screen.print("."); 
-    wait(1,sec);
+    wait(700,msec);
     Controller1.Screen.print("."); 
-    wait(1,sec);
+    wait(700,msec);
     Controller1.Screen.print("."); 
-    wait(1,sec);
+    wait(700,msec);
     Controller1.Screen.clearLine(1);
     Controller1.Screen.setCursor(1,2);
     // Controller1.Screen.print("自动选择：%s",auton_list[i].c_str());
@@ -99,7 +99,7 @@ void Joystick_Selector()
     AutonSelected =1;
     }
     
-    wait(150,msec);
+    wait(80,msec);
     
 }
 // auton2(); 

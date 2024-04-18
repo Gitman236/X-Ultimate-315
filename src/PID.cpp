@@ -84,8 +84,8 @@ void Run_gyro(double enc , double power, float g)//距离 功率，方向
       
     
   }
-  ChasisStop(hold);
-  // ChasisStopSlow();
+  // ChasisStop(hold);
+  ChasisStopSlow();
 }
 
 void Turn_Gyro(float target)
