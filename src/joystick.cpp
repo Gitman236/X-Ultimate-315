@@ -63,12 +63,25 @@ void Joystick() {
 
         // 按下 X 键进行 PTO 伸出名为 PTO 的气缸，再按一下取消 PTO
         if (Controller1.ButtonX.pressing()) {
-            PTO_Engaged = !PTO_Engaged; // 切换状态
-            Piston(PTO, PTO_Engaged);
+            // PTO_Engaged = !PTO_Engaged; // 切换状态
+            Piston(PTO, 1);
+            PTO_Engaged =1;
+
         }
         if (Controller1.ButtonY.pressing()) {
-            Lock_Engaged = !Lock_Engaged; // 切换状态
-            Piston(Lock, Lock_Engaged);
+            // Lock_Engaged = !Lock_Engaged; // 切换状态
+            Piston(PTO, 0);
+            PTO_Engaged =0;
+        }
+         if (Controller1.ButtonUp.pressing()) {
+            // Lock_Engaged = !Lock_Engaged; // 切换状态
+            Piston(Lock, 1);
+            Lock_Engaged =1;
+        }
+         if (Controller1.ButtonDown.pressing()) {
+            // Lock_Engaged = !Lock_Engaged; // 切换状态
+            Piston(Lock, 0);
+            Lock_Engaged =0;
         }
 
         // 未进行 PTO 时，按下 L1 键时 intake 吸入，按下 L2 键时 intake 吐出,按下 R1 键 Catapult 转，松手停止
