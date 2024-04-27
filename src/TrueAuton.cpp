@@ -71,12 +71,23 @@ void auton1(){
 }
 //线路二：远场保
 void auton2(){
-  Run_gyro(1590,85,3);
+  Run_gyro(1965,85,-8);
   wait(200,msec);
   Turn_Gyro(89);
-  wait(100,msec);
+  wait(150,msec);
+  Run_gyro(150,40,90);
   intake(100,"out");
-  Run_gyro(300,80,87);
+  wait(750,msec);
+  intake(100,"stop");
+  Run_gyro(300,100,89);
+  wait(800,msec);
+  Run_gyro(-833,30,89);
+  wait(150,msec);
+  Turn_Gyro(216);
+  wait(150,msec);
+  // intake(100,"in");
+  // Run_gyro(1300,30,220);
+  // intake(100,"stop");
 
 
  
@@ -85,6 +96,32 @@ void auton2(){
 }
 //线路三：近场
 void auton3(){
+Run_gyro(385,60,0);
+wait(100,msec);
+Piston(Wing_Hang,1);
+wait(300,msec);
+Run_gyro(-230,70,-20);
+wait(300,msec);
+Piston(Wing_Hang,0);
+Run_gyro(566,40,30);
+Run_gyro(222,50,45);
+intake(100,"out");
+wait(500,msec);
+// Run_gyro(480,100,46);
+wait(100,msec);
+intake(100,"stop");
+Run_gyro(-180,40,45);
+wait(200,msec);
+Turn_Gyro(220);
+wait(200,msec);
+Run_gyro(-390,100,218);
+Run_gyro(450,60,180);
+wait(150,msec);
+Run_gyro(1000,60,140);
+wait(100,msec);
+Run_gyro(980,60,124);
+wait(150,msec);
+Run_gyro(101,20,126);
 
 
   autodone=1;

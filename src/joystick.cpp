@@ -51,12 +51,15 @@ void Joystick() {
         }
 
         // 检测并执行其他操作（例如气缸控制）
+
+        
         // 按下 R2 键伸出名为 Wing_Hang 的气缸，再按一下收回
         if (Controller1.ButtonL2.pressing()) 
         {
           Piston(Wing_Hang, 1);
         }
-        else {
+        if (Controller1.ButtonB.pressing())
+        {
             Piston(Wing_Hang, 0);
         }
         
